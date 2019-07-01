@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+$for(author-meta)$
+  <meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$" />
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+$if(quotes)$
+      q { quotes: "“" "”" "‘" "’"; }
+$endif$
+  </style>
+  <style class="filters"></style>
+$if(highlighting-css)$
+  <style>
+$highlighting-css$
+  </style>
+$endif$
+$for(css)$
+  <link rel="stylesheet" href="$css$" />
+$endfor$
+$if(math)$
+  $math$
+$endif$
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
+<aside class="toc">
+  <div>
+    <h1>Platform Regulation</h1>
+    $if(toc)$
+    <nav id="$idprefix$TOC" role="doc-toc">
+    $table-of-contents$
+    </nav>
+    $endif$
+  </div>
+  <div class="aside-bottom">
+    <h5 class="filter-headline">Show:</h5>
+    <div class="filter-container">
+      <code id="must">MUST</code>
+      <code id="must-not">MUST NOT</code>
+      <code id="recommended">RECOMMENDED</code>
+      <code id="not-recommended">NOT RECOMMENDED</code>
+      <code id="discuss">DISCUSS</code>
+    </div>
+    <footer class="about">
+      <div class="logo"></div>
+      <div class="text">
+        <p>A project by <a href="https://epicenter.works" target="_blank">epicenter.works</a> – Plattform Grundrechtspolitik, Widerhofergasse 8/2/4, 1090 Wien, Austria.</p>
+        <p>Code on <a href="https://github.com/akvorrat/platformregulation.eu" target="_blank">Github</a>.</p>
+        <p>Contact us at <a href="mailto:feedback@platformregulation.eu">feedback@platformregulation.eu</a>.</p>
+      </div>
+    </footer>
+  </div>
+</aside>
+<div class="text-container">
+$if(subtitle)$
+<h1 class="subtitle">$subtitle$</h1>
+$endif$
+$for(include-before)$
+$include-before$
+$endfor$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+</div>
+<script src="assets/script.js"></script>
+</body>
+</html>
