@@ -123,11 +123,10 @@ footer.about {
 }
 footer.about div.logo {
   flex: 1;
-  background-image: url('img/epicenter_logo.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center right;
   margin-right: 0.5rem;
+}
+footer.about div.logo img {
+  width: 100%;
 }
 footer.about div.text {
   flex: 3;
@@ -138,7 +137,7 @@ footer.about p {
   display: inline;
 }
 footer.about a:hover{
-  color: #fff;
+  color: #00466d;
 }
 
 
@@ -291,9 +290,6 @@ section.level2 blockquote p {
   }
   .filter-container {
     flex-wrap: wrap;
-  }
-  footer.about {
-    display: none;
   }
 }
 
