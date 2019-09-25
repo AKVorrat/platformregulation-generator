@@ -104,3 +104,30 @@ const selectFilter = event => {
 }
 
 filters.forEach(filter => filter.addEventListener('click', selectFilter))
+
+// Newsletter signup
+const newsletterForm = document.querySelectorAll('form.newsletter-form')
+
+const newsletterSubmit = async event => {
+  event.preventDefault()
+  event.target.parentElement.classList.add('submitted')
+
+  const language = event.target.querySelector('.newsletter-language:checked').value
+  const url = language === 'de'
+    ? 'https://secure.dialog-mail.com/s/1ePd3'
+    : 'https://secure.dialog-mail.com/s/3xJOH'
+
+  const newsletterGruppe = event.target.querySelector('input.newsletter-gruppe')
+  if (language === 'de') {
+    newsletterGruppe.name = 'gruppe_49392'
+    newsletterGruppe.value = 'gruppe_49392'
+  }
+
+  const response = await fetch(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: new FormData(event.target)
+  })
+}
+
+newsletterForm.forEach(input => input.addEventListener('submit', newsletterSubmit))

@@ -53,6 +53,36 @@ $endfor$
     </nav>
     $endif$
   </div>
+
+  <div class="newsletter-box">
+    <div class="newsletter-box-form">
+      <h3 class="newsletter-headline">Stay informed and sign up to our newsletter:</h3>
+      <form class="newsletter-form" method="post" action="https://secure.dialog-mail.com/s/3xJOH">
+        <div class="newsletter-language-container">
+          <label>
+            <input class="newsletter-language" type="radio" name="newsletter-language" id="language-en" value="en" checked="checked"> English
+          </label>
+          <label>
+            <input class="newsletter-language" type="radio" name="newsletter-language" id="language-de" value="de"> German
+          </label>
+        </div>
+
+        <div class="newsletter-email-container">
+          <input class="newsletter-email" placeholder="E-Mail" type="email" name="feld_email" required="required" />
+          <button class="newsletter-submit" type="submit">Sign up now!</button>
+        </div>
+        <input type="hidden" name="dmail_charset" value="UTF-8" />
+        <input class="newsletter-gruppe" type="hidden" name="gruppe_52337" value="gruppe_52337" />
+        <input type="hidden" name="vl" value="" />
+      </form>
+      <p>By clicking this button, you accept our <a href="https://epicenter.works/datenschutz" target="_blank">Privacy Policy</a>.</p>
+    </div>
+    <div class="newsletter-box-confirmation">
+      <h3>Thanks for signing up!</h3>
+      <p>Check your mailbox for our confirmation link to complete your newsletter sign up.</p>
+    </div>
+  </div>
+
   <div class="aside-bottom">
     <h5 class="filter-headline">Show:</h5>
     <div class="filter-container">
@@ -75,6 +105,36 @@ $body$
 $for(include-after)$
 $include-after$
 $endfor$
+
+<div class="newsletter-box">
+  <div class="newsletter-box-form">
+    <h3 class="newsletter-headline">Stay informed and sign up to our newsletter:</h3>
+    <form class="newsletter-form" method="post" action="https://secure.dialog-mail.com/s/3xJOH">
+      <div class="newsletter-language-container">
+        <label>
+          <input class="newsletter-language" type="radio" name="newsletter-language" id="language-en" value="en" checked="checked"> English
+        </label>
+        <label>
+          <input class="newsletter-language" type="radio" name="newsletter-language" id="language-de" value="de"> German
+        </label>
+      </div>
+
+      <div class="newsletter-email-container">
+        <input class="newsletter-email" placeholder="E-Mail" type="email" name="feld_email" required="required" />
+        <button class="newsletter-submit" type="submit">Sign up now!</button>
+      </div>
+      <input type="hidden" name="dmail_charset" value="UTF-8" />
+      <input class="newsletter-gruppe" type="hidden" name="gruppe_52337" value="gruppe_52337" />
+      <input type="hidden" name="vl" value="" />
+    </form>
+    <p>By clicking this button, you accept our <a href="https://epicenter.works/datenschutz" target="_blank">Privacy Policy</a>.</p>
+  </div>
+  <div class="newsletter-box-confirmation">
+    <h3>Thanks for signing up!</h3>
+    <p>Check your mailbox for our confirmation link to complete your newsletter sign up.</p>
+  </div>
+</div>
+
 <footer class="about">
   <div class="logo epicenter">
     <img src="assets/img/epicenter_logo.svg" />
