@@ -188,6 +188,8 @@ aside li a .toc-section-number {
 }
 footer.about {
   display: flex;
+  max-width: 768px;
+  margin: 1rem auto;
 }
 footer.about div.logo {
   flex: 1;
