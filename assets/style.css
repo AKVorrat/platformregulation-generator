@@ -55,6 +55,7 @@ aside ul {
   list-style: none;
   font-size: 1.2rem;
   color: #fff;
+  padding: 0 0.5rem;
 }
 aside ul a {
   text-decoration: none;
@@ -69,9 +70,6 @@ aside li a:hover{
   color: #00466d;
 }
 aside ul ul {
-  display: none;
-}
-aside li a .toc-section-number {
   display: none;
 }
 .toc-section-number::after,
@@ -353,9 +351,6 @@ section.level2 blockquote p {
   aside h1 {
     text-align: inherit;
   }
-  aside ul {
-    list-style: decimal;
-  }
   .text-container {
     height: auto;
     overflow: auto;
@@ -426,9 +421,6 @@ section.level2 blockquote p {
     list-style: none;
     font-size: 90%;
     text-transform: none;
-  }
-  aside li a .toc-section-number {
-    display: inline !important;
   }
   aside ul ul {
     display: block;
