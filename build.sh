@@ -4,7 +4,7 @@ FOLDER=text
 
 if [ ! -d "$FOLDER" ] ; then
   echo "[Preg] Clone text repository"
-  git clone git@github.com:burnoutberni/platformregulation-text.git $FOLDER
+  git clone git@github.com:akvorrat/platformregulation-text.git $FOLDER
 else
   echo "[Preg] Pull text changes"
   cd "$FOLDER"
