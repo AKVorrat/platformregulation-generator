@@ -105,6 +105,7 @@ aside ul ul {
 .newsletter-email-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   margin: 0.2rem 0;
 }
 .newsletter-email {
