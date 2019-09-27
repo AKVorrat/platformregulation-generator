@@ -115,6 +115,7 @@ aside ul ul {
   background-color: #fff;
   border: none;
   padding: 0.2rem 0.4rem;
+  max-width: calc(100% - 0.8rem);
 }
 .newsletter-submit {
   font-family: 'Oswald';
