@@ -1,10 +1,10 @@
 # platformregulation
 
-Static site generator for [platformregulation.eu](https://platformregulation.eu). Requires [`pandoc`](https://pandoc.org).
+Static site generator for [platformregulation.eu](https://platformregulation.eu). Requires [`pandoc`](https://pandoc.org) as well as for generating a PDF version [`weasyprint`](https://weasyprint.org/).
 
 ## Usage
 
-Install `pandoc`, clone this git repository and run `./build.sh`. This generates all necessary files and puts them in the folder `output`. Serve with a web server of your choice.
+Install `pandoc` and `weasyprint`, clone this git repository and run `./build.sh`. This generates all necessary files and puts them in the folder `output`. Serve with a web server of your choice.
 
 ## License
 
