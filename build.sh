@@ -21,4 +21,8 @@ pandoc -s text/text.md --template template.html --number-offset -1 --toc --secti
 echo "[Preg] Copy assets"
 cp -r assets output
 
+echo "[Preg] Generate PDF from text"
+mkdir -p output/assets/docs
+pandoc -s text/text.md --pdf-engine weasyprint --template template.html --number-offset -1 --toc --section-divs -o output/assets/docs/platform-regulation.pdf
+
 echo "[Preg] Done! Bundle available at ./output"
