@@ -30,7 +30,7 @@ a:hover {
   color: #00a4eb;
 }
 code {
-    font-family: 'Space Mono', monospace;
+  font-family: 'Space Mono', monospace;
 }
 
 aside {
@@ -225,9 +225,6 @@ footer.about a:hover{
 .text-container > p {
   margin: 2rem;
 }
-section {
-  page-break-inside: avoid;
-}
 section h1 {
   margin-bottom: 0.5rem;
 }
@@ -264,7 +261,7 @@ section.level2 h2 a .tag {
   margin-right: 0.5rem;
 }
 
-.tag {
+code {
   font-size: 0.8rem;
   color: white;
   border-radius: 0.2rem;
@@ -374,14 +371,27 @@ section.level2 blockquote p {
   p, ol li, ul li, ul li a {
     font-family: 'Crimson Text', serif;
   }
+  aside  {
+    background-color: #fff;
+  }
   aside ul a{
     line-height: 1.5rem;
+    width: 100%;
+  }
+  aside ul a::after {
+    content: ' page ' target-counter(attr(href), page);
+    font-size: 80%;
+    font-style: italic;
   }
   .newsletter-box {
     display: none;
   }
-  .tag {
+  code {
     color: #000;
+    border: 1px solid #000;
+  }
+  .tag {
+    border: none;
   }
   ul .tag {
     margin: 0;
@@ -438,8 +448,14 @@ section.level2 blockquote p {
     overflow-y: auto;
     padding: 1rem;
   }
-  .intro {
-    margin: 0;
+  .text-container > h1,
+  .text-container > p,
+  section {
+    margin: inherit 0 !important;
+    padding: inherit 0 !important;
+  }
+  strong {
+    line-height: 1;
   }
   blockquote {
     display: block !important;
@@ -453,6 +469,17 @@ section.level2 blockquote p {
     font-size: 95%;
     font-style: italic;
     color: #0B0080;
+  }
+  .download-pdf {
+    display: none !important;
+  }
+}
+
+@page {
+  @bottom-center{
+    content: counter(page);
+    font-family: 'Crimson Text', serif;
+    font-size: 80%;
   }
 }
 
