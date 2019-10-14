@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 FOLDER=text
+OUTPUT=output
 
 if [ ! -d "$FOLDER" ] ; then
   echo "[Preg] Clone text repository"
@@ -12,17 +13,20 @@ else
   cd ..
 fi
 
-rm -rf output
-mkdir output
+mkdir -p $OUTPUT
 
 echo "[Preg] Generate html from text"
-pandoc -s text/text.md --template template.html --number-offset -1 --toc --section-divs -o output/index.html
+pandoc -s $FOLDER/text.md --template template.html --number-offset -1 --toc --section-divs -o $OUTPUT/index.html
 
 echo "[Preg] Copy assets"
-cp -r assets output
+cp -r assets $OUTPUT
+
+echo "[Preg] Get version number"
+VERSION="$(awk -F '"' '/^version/ { print $2 }' $FOLDER/text.md)"
 
 echo "[Preg] Generate PDF from text"
-mkdir -p output/assets/docs
-pandoc -s text/text.md --pdf-engine weasyprint --template template.html --number-offset -1 --toc --section-divs -o output/assets/docs/platform-regulation.pdf
+mkdir -p $OUTPUT/assets/docs
+pandoc -s $FOLDER/text.md --pdf-engine weasyprint --template template.html --number-offset -1 --toc --section-divs -o $OUTPUT/assets/docs/platformregulation-v$VERSION.pdf
+ln -sf platformregulation-v$VERSION.pdf output/assets/docs/platformregulation-latest.pdf
 
-echo "[Preg] Done! Bundle available at ./output"
+echo "[Preg] Done! Bundle available at ./$OUTPUT"
