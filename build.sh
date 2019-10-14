@@ -27,6 +27,14 @@ VERSION="$(awk -F '"' '/^version/ { print $2 }' $FOLDER/text.md)"
 echo "[Preg] Generate PDF from text"
 mkdir -p $OUTPUT/assets/docs
 pandoc -s $FOLDER/text.md --pdf-engine weasyprint --template template.html --number-offset -1 --toc --section-divs -o $OUTPUT/assets/docs/platformregulation-v$VERSION.pdf
-ln -sf platformregulation-v$VERSION.pdf output/assets/docs/platformregulation-latest.pdf
+ln -sf platformregulation-v$VERSION.pdf $OUTPUT/assets/docs/platformregulation-latest.pdf
 
-echo "[Preg] Done! Bundle available at ./$OUTPUT"
+echo "[Preg] Success! Bundle available at ./$OUTPUT"
+
+if [ "$1" != "" -a "$1" == "-u" ]; then
+  if [ -e upload.sh ]; then
+    ./upload.sh
+  else
+    echo "[Preg] Error: upload.sh missing"
+  fi
+fi
